@@ -1,0 +1,454 @@
+# Algoritma Pemrograman II
+
+## Function & Void Function
+
+### Function
+
+Function adalah blok kode yang dapat dipanggil atau digunakan untuk melakukan tugas tertentu. Function digunakan untuk mengorganisasi kode menjadi bagian yang terpisah dan dapat digunakan berulang kali.
+
+Misalkan kita ingin membuat sebuah function untuk menghitung luas persegi panjang. Kita bisa membuat function bernama "luasPersegiPanjang" yang menerima dua parameter (panjang dan lebar) dan mengembalikan nilai luasnya.
+
+**Contoh:**
+
+kita ingin membuat fungsi menghitung luas persegi panjang
+
+```cpp filename="luasPersegiPanjang.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+// Deklarasi function luasPersegiPanjang
+int luasPersegiPanjang(int panjang, int lebar) {
+    int luas = panjang * lebar;
+    return luas;
+}
+
+int main() {
+    // Panggil function luasPersegiPanjang dan simpan hasilnya di variabel hasil
+    int hasil = luasPersegiPanjang(5, 3);
+
+    // Tampilkan hasil luas
+    cout << "Luas Persegi Panjang: " << hasil << endl;
+
+    return 0;
+}
+```
+
+Pada contoh di atas, kita membuat function luasPersegiPanjang yang menerima dua parameter (panjang dan lebar). Di dalam function tersebut, kita menghitung luas persegi panjang dan mengembalikan nilainya. Kemudian, di dalam main, kita memanggil function tersebut dengan memberikan nilai 5 dan 3 sebagai argumen dan menyimpan hasilnya di variabel hasil. Selanjutnya, kita menampilkan hasil luas menggunakan sintaks cout.
+
+### Void Function
+
+Void function adalah fungsi yang tidak mengembalikan nilai/return (void artinya kosong dalam bahasa Inggris). Void function digunakan ketika kita hanya ingin menjalankan serangkaian instruksi tanpa menghasilkan nilai kembalian.
+
+**Contoh:**
+
+Misalkan kita ingin membuat void function untuk menampilkan pesan sederhana ke layar.
+
+```cpp filename="pesanSederhana.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+// Deklarasi void function
+void tampilkanPesan() {
+    cout << "Halo! Selamat datang di program ini." << endl;
+}
+
+int main() {
+    // Panggil void function tampilkanPesan
+    tampilkanPesan();
+
+    return 0;
+}
+```
+
+Pada contoh di atas, kita membuat void function `tampilkanPesan` yang tidak menerima parameter dan tidak mengembalikan nilai. Di dalam function tersebut, kita hanya menampilkan pesan sederhana ke layar menggunakan cout. Kemudian, di dalam main, kita memanggil void function tersebut dengan menggunakan namanya.
+
+## Referensi & Pointer
+
+### Referensi
+
+Referensi adalah alias atau nama lain untuk variabel yang sudah ada. Referensi digunakan untuk mengakses dan memanipulasi nilai variabel melalui nama referensinya.
+
+**Contoh:**
+
+Misalkan kita memiliki variabel angka dengan nilai 5. Kita bisa membuat referensi untuk variabel tersebut dengan menggunakan tanda ampersand (&) diikuti dengan nama referensinya.
+
+```cpp filename="referensi.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+int main() {
+    int angka = 5;
+
+    // Buat referensi untuk variabel angka
+    int& referensiAngka = angka;
+
+    // Ubah nilai variabel melalui referensi
+    referensiAngka = 10;
+
+    // Tampilkan nilai variabel
+    cout << "Nilai angka: " << angka << endl;
+
+    return 0;
+}
+```
+
+Pada contoh di atas, kita membuat variabel angka dengan nilai 5. Selanjutnya, kita membuat referensi `referensiAngka` untuk variabel angka. Melalui referensi tersebut, kita dapat mengubah nilai variabel angka menjadi 10 dengan cara mengubah nilai melalui referensi. Setelah itu, kita tampilkan nilai variabel angka menggunakan cout, dan hasilnya akan menjadi 10 karena kita mengubahnya melalui referensi.
+
+### Pointer
+
+Pointer adalah variabel yang menyimpan alamat memori dari variabel lain. Pointer digunakan untuk mengakses dan memanipulasi nilai variabel melalui alamat memori yang ditunjuk oleh pointer tersebut.
+
+**Contoh:**
+
+Misalkan kita memiliki variabel angka dengan nilai 7. Kita bisa membuat pointer untuk variabel tersebut dengan menggunakan tanda asterisk (\*) diikuti dengan nama pointernya.
+
+```cpp filename="pointer.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+int main() {
+    int angka = 7;
+
+    // Buat pointer untuk variabel angka
+    int* pointerAngka = &angka;
+
+    // Ubah nilai variabel melalui pointer
+    *pointerAngka = 15;
+
+    // Tampilkan nilai variabel
+    cout << "Nilai angka: " << angka << endl;
+
+    return 0;
+}
+```
+
+Pada contoh di atas, kita membuat variabel angka dengan nilai 7. Selanjutnya, kita membuat pointer `pointerAngka` untuk variabel angka dengan menggunakan tanda asterisk (\*). Pointer `pointerAngka` menyimpan alamat memori dari variabel angka. Melalui pointer tersebut, kita dapat mengubah nilai variabel angka menjadi 15 dengan cara mengubah nilai melalui pointer menggunakan operator dereference (\*) pada pointer. Setelah itu, kita tampilkan nilai variabel angka menggunakan cout, dan hasilnya akan menjadi 15 karena kita mengubahnya melalui pointer.
+
+## Recursion (Rekursif)
+
+Rekursif adalah teknik di mana sebuah fungsi memanggil dirinya sendiri. Rekursif berguna ketika suatu masalah dapat dibagi menjadi submasalah yang lebih kecil yang memiliki struktur yang sama.
+
+**Contoh:**
+
+```cpp filename="rekursif.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+// Fungsi rekursif untuk mencetak angka dari 1 hingga n
+void cetakAngka(int n) {
+    if (n > 0) {
+        cetakAngka(n - 1);  // Memanggil dirinya sendiri dengan argumen yang lebih kecil
+        cout << n << " ";
+    }
+}
+
+int main() {
+    int n = 5;
+
+    // Memanggil fungsi rekursif cetakAngka
+    cetakAngka(n);
+
+    return 0;
+}
+```
+
+pada contoh di atas, kita membuat fungsi rekursif `cetakAngka` yang menerima satu parameter n. Di dalam fungsi tersebut, kita mengecek apakah n lebih besar dari 0. Jika iya, maka kita memanggil fungsi `cetakAngka` dengan argumen n - 1. Hal ini akan terus berulang sampai n lebih kecil atau sama dengan 0. Jika n lebih kecil atau sama dengan 0, maka fungsi akan berhenti memanggil dirinya sendiri dan mencetak nilai n.
+
+## Struct
+
+Struct adalah cara untuk menggabungkan beberapa variabel dengan tipe data yang berbeda menjadi satu unit yang terorganisir. Struct memungkinkan kita untuk membuat tipe data baru dengan atribut-atribut yang sesuai.
+
+**Contoh:**
+
+```cpp filename="struct.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+// Mendefinisikan struct Mahasiswa
+struct Mahasiswa {
+    string nama;
+    int umur;
+    string jurusan;
+};
+
+int main() {
+    // Membuat objek mahasiswa1 dari struct Mahasiswa
+    Mahasiswa mahasiswa1;
+
+    // Mengisi atribut objek
+    mahasiswa1.nama = "John";
+    mahasiswa1.umur = 20;
+    mahasiswa1.jurusan = "Teknik Informatika";
+
+    // Menampilkan atribut objek
+    cout << "Nama: " << mahasiswa1.nama << endl;
+    cout << "Umur: " << mahasiswa1.umur << endl;
+    cout << "Jurusan: " << mahasiswa1.jurusan << endl;
+
+    return 0;
+}
+```
+
+Pada contoh di atas, kita mendefinisikan struct Mahasiswa yang memiliki atribut nama, umur, dan jurusan. Selanjutnya, kita membuat objek mahasiswa1 dari struct Mahasiswa dan mengisi atribut-atributnya. Kemudian, kita menampilkan atribut objek menggunakan cout.
+
+## Search
+
+### Linear Search
+
+Linear search adalah metode pencarian sederhana yang memeriksa setiap elemen dalam array secara berurutan untuk menemukan elemen yang dicari.
+
+**Contoh:**
+
+```cpp filename="linearSearch.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+int linearSearch(int arr[], int n, int target) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == target) {
+            return i; // Mengembalikan indeks elemen yang ditemukan
+        }
+    }
+    return -1; // Mengembalikan -1 jika elemen tidak ditemukan
+}
+
+int main() {
+    int arr[] = {5, 2, 8, 12, 3};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int target = 8;
+
+    int result = linearSearch(arr, n, target);
+
+    if (result != -1) {
+        cout << "Elemen ditemukan pada indeks " << result << endl;
+    } else {
+        cout << "Elemen tidak ditemukan" << endl;
+    }
+
+    return 0;
+}
+```
+
+Pada contoh di atas, kita menggunakan fungsi linearSearch untuk mencari elemen dalam array secara berurutan. Fungsi ini melakukan iterasi melalui setiap elemen array dan memeriksa apakah elemen tersebut sama dengan elemen yang dicari. Jika ditemukan, fungsi akan mengembalikan indeks elemen yang ditemukan. Jika tidak ditemukan, fungsi akan mengembalikan -1. Di dalam main, kita memanggil fungsi linearSearch dengan array, panjang array, dan elemen yang ingin dicari. Setelah itu, kita menampilkan pesan sesuai dengan hasil pencarian.
+
+### Binary Search
+
+Binary search adalah metode pencarian yang efisien yang bekerja dengan asumsi array yang terurut secara teratur. Algoritma ini membagi array menjadi dua bagian dan mencari elemen di bagian yang relevan berdasarkan perbandingan dengan elemen tengah.
+
+**Contoh:**
+
+```cpp filename="binarySearch.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+int binarySearch(int arr[], int left, int right, int target) {
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+
+        if (arr[mid] == target) {
+            return mid; // Mengembalikan indeks elemen yang ditemukan
+        }
+
+        if (arr[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return -1; // Mengembalikan -1 jika elemen tidak ditemukan
+}
+
+int main() {
+    int arr[] = {2, 3, 5, 8, 12};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int target = 8;
+
+    int result = binarySearch(arr, 0, n - 1, target);
+
+    if (result != -1) {
+        cout << "Elemen ditemukan pada indeks " << result << endl;
+    } else {
+        cout << "Elemen tidak ditemukan" << endl;
+    }
+
+    return 0;
+}
+```
+
+Pada contoh di atas, kita menggunakan fungsi binarySearch untuk mencari elemen dalam array yang terurut. Fungsi ini menggunakan pendekatan iteratif dengan membagi array menjadi dua bagian dan mencari elemen di bagian yang relevan berdasarkan perbandingan dengan elemen tengah. Jika ditemukan, fungsi akan mengembalikan indeks elemen yang ditemukan. Jika tidak ditemukan, fungsi akan mengembalikan -1. Di dalam main, kita memanggil fungsi binarySearch dengan array, indeks awal, indeks akhir, dan elemen yang ingin dicari. Setelah itu, kita menampilkan pesan sesuai dengan hasil pencarian.
+
+### Which better?
+
+Dalam penyelesaian masalah pencarian elemen dalam array, pilihan antara linear search dan binary search bergantung pada kondisi array dan efisiensi yang diinginkan. Linear search sederhana dan mudah diimplementasikan, cocok untuk array kecil, tetapi tidak efisien untuk array yang besar. Sementara itu, binary search efisien dengan kompleksitas waktu logaritmik, cocok untuk array besar atau terurut, tetapi memerlukan array yang sudah terurut sebelumnya. Oleh karena itu, jika kita memiliki array yang terurut atau besar, binary search menjadi pilihan yang lebih baik untuk mendapatkan hasil pencarian dengan cepat.
+
+## Sorting
+
+### Bubble Sort
+
+Bubble sort adalah algoritma sorting sederhana yang membandingkan dua elemen sekaligus dan menukar posisi mereka jika diperlukan. Algoritma ini mengulang proses tersebut hingga seluruh array terurut.
+
+**Contoh:**
+
+```cpp filename="bubbleSort.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr[j], arr[j + 1]);
+            }
+        }
+    }
+}
+
+int main() {
+    int arr[] = {5, 2, 8, 12, 3};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    bubbleSort(arr, n);
+
+    cout << "Hasil Bubble Sort: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+```
+
+Pada contoh di atas, kita menggunakan fungsi bubbleSort untuk mengurutkan array. Fungsi ini melakukan iterasi sebanyak n-1 kali, membandingkan elemen berpasangan, dan menukar posisi jika diperlukan. Di dalam main, kita memanggil fungsi bubbleSort dengan array yang akan diurutkan. Setelah itu, kita menampilkan hasil sorting dengan menggunakan cout.
+
+### Selection Sort
+
+Selection sort adalah algoritma sorting yang memilih elemen terkecil dari sisa array dan menukar posisi dengan elemen pada indeks yang sesuai. Algoritma ini mengulang proses tersebut untuk setiap elemen pada array.
+
+**Contoh:**
+
+```cpp filename="selectionSort.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+void selectionSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        swap(arr[i], arr[minIndex]);
+    }
+}
+
+int main() {
+    int arr[] = {5, 2, 8, 12, 3};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    selectionSort(arr, n);
+
+    cout << "Hasil Selection Sort: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+```
+
+Pada contoh di atas, kita menggunakan fungsi selectionSort untuk mengurutkan array. Fungsi ini melakukan iterasi sebanyak n-1 kali, mencari elemen terkecil pada sisa array, dan menukar posisi dengan elemen pada indeks yang sesuai. Di dalam main, kita memanggil fungsi selectionSort dengan array yang akan diurutkan. Setelah itu, kita menampilkan hasil sorting dengan menggunakan cout.
+
+### Merge Sort
+
+Merge sort adalah algoritma sorting rekursif yang membagi array menjadi dua bagian, mengurutkan masing-masing bagian secara terpisah, lalu menggabungkan kembali kedua bagian tersebut dalam urutan yang benar.
+
+**Contoh:**
+
+```cpp filename="mergeSort.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+void merge(int arr[], int left, int mid, int right) {
+    int i, j, k;
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+
+    int L[n1], R[n2];
+
+    // Salin elemen ke array sementara L dan R
+    for (i = 0; i < n1; i++)
+        L[i] = arr[left + i];
+    for (j = 0; j < n2; j++)
+        R[j] = arr[mid + 1 + j];
+
+    // Gabungkan kembali array L dan R
+    i = 0; // Indeks awal subarray L
+    j = 0; // Indeks awal subarray R
+    k = left; // Indeks awal subarray gabungan
+
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
+        }
+        else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    // Salin elemen yang tersisa dari L (jika ada)
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    // Salin elemen yang tersisa dari R (jika ada)
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
+void mergeSort(int arr[], int left, int right) {
+    if (left < right) {
+        int mid = left + (right - left) / 2;
+
+        // Panggil rekursif mergeSort untuk subarray kiri
+        mergeSort(arr, left, mid);
+
+        // Panggil rekursif mergeSort untuk subarray kanan
+        mergeSort(arr, mid + 1, right);
+
+        // Gabungkan kembali subarray yang sudah terurut
+        merge(arr, left, mid, right);
+    }
+}
+
+int main() {
+    int arr[] = {5, 2, 8, 12, 3};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    mergeSort(arr, 0, n - 1);
+
+    cout << "Hasil Merge Sort: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+```
+
+Pada contoh di atas, kita menggunakan fungsi `mergeSort` dan merge untuk mengurutkan array dengan metode merge sort. Fungsi `mergeSort` melakukan pembagian array menjadi subarray kiri dan kanan, kemudian memanggil dirinya sendiri secara rekursif untuk mengurutkan kedua subarray tersebut. Setelah itu, fungsi merge digunakan untuk menggabungkan kembali subarray yang sudah terurut menjadi array utuh yang terurut. Di dalam main, kita memanggil fungsi mergeSort dengan array yang akan diurutkan. Setelah itu, kita menampilkan hasil sorting dengan menggunakan cout.
+
+### Which Sort to Use?
+
+Bubble sort bekerja dengan membandingkan dan menukar elemen berpasangan secara berulang hingga seluruh array terurut, sedangkan selection sort memilih elemen terkecil dari sisa array dan menukar posisinya dengan elemen pada indeks yang sesuai. Meskipun sederhana, kedua algoritma ini memiliki kompleksitas waktu yang lebih tinggi daripada merge sort. Merge sort membagi array menjadi subarray, mengurutkan masing-masing subarray secara terpisah, dan menggabungkannya kembali dalam urutan yang benar. Algoritma ini memiliki kompleksitas waktu yang lebih baik, terutama untuk array besar. Dalam memilih algoritma sorting, jika kecepatan dan efisiensi menjadi faktor penting, merge sort merupakan pilihan yang lebih baik, sementara bubble sort dan selection sort lebih cocok untuk masalah kecil atau untuk tujuan pendidikan dan pemahaman konsep sorting.

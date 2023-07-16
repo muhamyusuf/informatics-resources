@@ -1,0 +1,22 @@
+{
+  "index": {
+    "title": "Introduction"
+  },
+  "about": {
+    "title": "About ↗",
+    "type": "page"
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page"
+  },
+  "resources": {
+    "title": "Resources"
+  },
+  "task": {
+    "title": "Tasks"
+  },
+  "contribution-guide": {
+    "title": "Contribution Guide"
+  }
+}

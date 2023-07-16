@@ -1,0 +1,678 @@
+# Algoritma Pemrograman I
+
+## Pendahuluan
+
+### Algoritma
+
+Istilah Algortima muncul dari nama seorang ahli matematika yang terkenal yakni Abu Ja'far Muhammad Ibnu Musa Al-Khuwarizmi, namun orang barat membaca Al-Khuwarizmi dengan Algorism.
+
+Algoritma merupakan langkah logis untuk menyelesaikan suatu masalah. Algoritma dapat diimplementasikan dalam bentuk program komputer. Algoritma dapat diimplementasikan dalam berbagai bahasa pemrograman.
+
+### Program
+
+Program adalah kumpulan instruksi yang ditulis dalam bahasa pemrograman tertentu. Program dapat dijalankan oleh komputer untuk menyelesaikan suatu masalah. Dalam program terdapat istilah pemrograman yakni proses menulis, menguji, dan memperbaiki program, serta memelihara program tersebut.
+
+Dalam menulis program kita bisa menggunakan aplikasi text editor seperti notepad, notepad++, sublime text, visual studio code, dan lain-lain. Selain itu kita juga bisa menggunakan IDE (Integrated Development Environment) seperti Netbeans, Eclipse, Visual Studio, dan lain-lain.
+
+### Bahasa Pemrograman
+
+Bahasa pemrograman adalah alat yang digunakan untuk menulis instruksi-instruksi yang dapat dipahami oleh komputer. Dalam pemrograman, kita menggunakan bahasa pemrograman untuk mengomunikasikan logika dan tindakan kepada komputer agar dapat menjalankan perintah yang kita inginkan. Bahasa pemrograman memiliki sintaks dan aturan tertentu yang harus diikuti untuk memastikan kode yang kita tulis dapat dieksekusi dengan benar. Dengan menggunakan bahasa pemrograman, kita dapat mengembangkan aplikasi, memanipulasi data, memecahkan masalah, dan menciptakan berbagai solusi berbasis komputer.
+
+#### Jenis Bahasa Pemrograman
+
+    * Compiled Language
+
+        Merupakan bahasa pemrograman yang memerlukan proses kompilasi. Kode akan diterjemahkan menjadi bahasa mesin dan disimpan dalam bentuk file biner. Jika ada kesalahan maka program berhenti pada baris yang error.
+
+        **Contoh:** C, C++, C#, Java, dan lain-lain.
+
+        <br/>
+
+    * Interpereted Language
+        Merupakan bahasa pemrograman yang tidak memerlukan proses kompilasi. Kode akan diterjemahkan perbaris dan langsung dieksekusi oleh komputer, jika ada kesalahan maka program berhenti pada baris yang error.
+
+        **Contoh:** Python, PHP, Ruby, JavaScript, Perl, dan lain-lain.
+
+        <br/>
+
+    * Hybrid Language
+
+        Merupakan bahasa pemrograman yang memerlukan proses kompilasi dan interpretasi. Kode akan diterjemahkan menjadi bahasa mesin dan disimpan dalam bentuk file biner. Jika ada kesalahan maka program berhenti pada baris yang error.
+
+        **Contoh:** Visual Basic, Pascal, dan lain-lain.
+
+## Struktur Program C++
+
+### Header
+
+Header adalah bagian dari program C++ yang digunakan untuk menyertakan file header standar atau file header yang kita buat sendiri. File header berisi deklarasi fungsi, kelas, atau variabel yang akan digunakan dalam program.
+
+```cpp filename="header.cpp" copy showLineNumbers
+#include <iostream> //untuk pemula biasanya hanya menggunakan iostream
+
+// library tambahan
+#include <string>
+#include <vector>
+```
+
+Selengkapnya bisa dilihat di [Library Documentation c++](https://cplusplus.com/reference/)
+
+### Fungsi `int main()`
+
+Fungsi main() adalah titik masuk utama dalam program C++. Setiap program C++ harus memiliki fungsi main() yang akan dieksekusi oleh komputer saat program dijalankan. Di dalam fungsi main(), kita menuliskan kode program yang akan dieksekusi secara berurutan.
+
+```cpp filename="main.cpp" copy showLineNumbers
+int main() {
+    // Blok kode program di sini
+    return 0;
+}
+```
+
+### using namespace std;
+
+`using namespace std;` adalah pernyataan yang memungkinkan kita menggunakan elemen-elemen dari namespace std secara langsung tanpa menuliskan std:: di depannya. Namespace std berisi berbagai fungsi dan objek standar dalam bahasa C++.
+
+untuk code standar pada c++ seperti ini:
+
+```cpp filename="standar.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Penggunaan cin dan cout langsung di sini
+    return 0;
+}
+```
+
+## Variabel
+
+Variabel adalah tempat untuk menyimpan data. Variabel dapat diisi dengan berbagai macam tipe data. Tipe data yang tersedia di setiap bahasa pemrograman berbeda-beda. Tipe data yang tersedia di setiap bahasa pemrograman juga memiliki ukuran yang berbeda-beda.
+
+Pada C++ terdapat beberapa tipe data variabel yang umum digunakan, diantaranya:
+
+| Tipe Data | Ukuran | Deskripsi                                             |
+| --------- | ------ | ----------------------------------------------------- |
+| int       | 4 byte | Bilangan bulat, contoh: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 |
+| float     | 4 byte | Bilangan pecahan, contoh: 1.5, 2.5, 3.5, 4.5, 5.5     |
+| double    | 8 byte | Bilangan pecahan, contoh: 1.5, 2.5, 3.5, 4.5, 5.5     |
+| char      | 1 byte | Karakter, contoh: a, b, c, d, e, f, g, h, i, j, k     |
+| bool      | 1 byte | Benar atau salah, contoh: true, false                 |
+| string    | -      | Kumpulan karakter, contoh: "Hello World"              |
+
+**Contoh:**
+
+```cpp filename="variabel.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a = 10;
+    float b = 3.14;
+    double c = 3.1415;
+    char d = 'X';
+    bool e = true;
+    string f = "Hello World";
+
+    cout << "Nilai a: " << a << endl;
+    cout << "Nilai b: " << b << endl;
+    cout << "Nilai c: " << c << endl;
+    cout << "Nilai d: " << d << endl;
+    cout << "Nilai e: " << e << endl;
+    cout << "Nilai f: " << f << endl;
+
+    return 0;
+}
+```
+
+Output dari program di atas:
+
+    ```ansi filename="terminal"
+    Nilai a: 10
+    Nilai b: 3.14
+    Nilai c: 3.1415
+    Nilai d: X
+    Nilai e: 1
+    Nilai f: Hello World
+    ```
+
+## Input dan Output
+
+### Input (cin)
+
+Input digunakan untuk menerima data dari pengguna atau sumber eksternal ke dalam program. Dalam C++, kita dapat menggunakan cin untuk membaca input dari keyboard.
+
+**Contoh:**
+
+```cpp filename="input.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+    cout << "Masukkan angka: ";
+    cin >> num;
+    cout << "Angka yang dimasukkan adalah: " << num << endl;
+
+    return 0;
+}
+```
+
+Output dari program di atas:
+
+```ansi filename="terminal"
+Masukkan angka: 10                  <- input dari keyboard
+Angka yang dimasukkan adalah: 10    <- output
+```
+
+Pada contoh di atas, kita menggunakan cout untuk menampilkan pesan kepada pengguna untuk memasukkan angka. Kemudian, menggunakan `cin` untuk membaca input dari pengguna dan menyimpannya dalam variabel num. Setelah itu, menggunakan `cout` lagi untuk menampilkan angka yang dimasukkan oleh pengguna.
+
+### Output (cout)
+
+Output digunakan untuk menampilkan hasil atau informasi dari program kepada pengguna atau output ke sumber eksternal. Dalam C++, kita dapat menggunakan `cout` untuk mencetak output ke layar.
+
+**Contoh:**
+
+```cpp filename="output.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num1 = 5;
+    int num2 = 10;
+    int sum = num1 + num2;
+
+    cout << "Hasil penjumlahan: " << sum << endl;
+
+    return 0;
+}
+```
+
+Output dari program di atas:
+
+```ansi filename="terminal"
+Hasil penjumlahan: 15
+```
+
+Pada contoh di atas, kita menggunakan `cout` untuk menampilkan pesan dan hasil penjumlahan dari dua variabel `num1` dan `num2` dengan menggunakan operator +. Hasil penjumlahan kemudian dicetak ke layar menggunakan `cout`.
+
+## if-else
+
+if-else adalah struktur pengendalian yang digunakan untuk membuat keputusan berdasarkan kondisi yang bernilai benar `true{:cpp}` atau salah `false`. Dengan if-else, kita dapat menjalankan blok kode tertentu jika kondisi terpenuhi (true), dan menjalankan blok kode lain jika kondisi tidak terpenuhi (false).
+
+Bentuk Umum:
+
+```cpp filename="if-else.cpp" copy showLineNumbers
+if (kondisi) {
+    // Blok kode yang akan dijalankan jika kondisi bernilai true
+} else if (kondisi) {
+    // Blok kode yang akan dijalankan jika kondisi bernilai true dan kondisi sebelumnya bernilai false
+} else {
+    // Blok kode yang akan dijalankan jika kondisi bernilai false
+}
+```
+
+Untuk `else if` dan `else` bersifat opsional. Kita dapat menggunakan if saja tanpa else if dan else, atau menggunakan if dan else saja tanpa else if.
+
+**Contoh:**
+
+```cpp filename="if-else.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+
+    cout << "Masukkan sebuah angka: ";
+    cin >> num;
+
+    if (num > 0){
+        // Blok kode yang akan dijalankan jika input lebih besar dari 0
+        cout << "Angka tersebut adalah bilangan positif" << endl;
+    } else if (num < 0) {
+        // Blok kode yang akan dijalankan jika input lebih kecil dari 0
+        cout << "Angka tersebut adalah bilangan negatif" << endl;
+    } else {
+        // Blok kode yang akan dijalankan jika input sama dengan 0
+        cout << "Angka tersebut adalah nol" << endl;
+    }
+
+    return 0;
+}
+```
+
+Output dari program di atas:
+
+```ansi filename="terminal"
+Masukkan sebuah angka: 10                <- input dari keyboard
+Angka tersebut adalah bilangan positif   <- blok kode di kondisi if pertama
+```
+
+Pada contoh di atas, kita menggunakan cin untuk meminta pengguna memasukkan sebuah angka dan menyimpannya dalam variabel num. Selanjutnya, menggunakan if-else untuk memeriksa apakah num lebih besar dari 0 (bilangan positif), lebih kecil dari 0 (bilangan negatif), atau sama dengan 0 (nol). Sesuai dengan hasilnya, program akan mencetak pesan yang sesuai ke layar.
+
+## Switch-Case
+
+Switch-case adalah struktur pengendalian yang digunakan untuk membuat keputusan berdasarkan kondisi yang bernilai benar `true{:cpp}` atau salah `false`. Dengan switch-case, kita dapat menjalankan blok kode tertentu jika kondisi terpenuhi (true), dan menjalankan blok kode lain jika kondisi tidak terpenuhi (false).
+
+Bentuk Umum:
+
+```cpp filename="switch-case.cpp" copy showLineNumbers
+switch (ekspresi) {
+    case nilai1:
+        // Blok kode yang akan dijalankan jika ekspresi sama dengan nilai1
+        break;
+    case nilai2:
+        // Blok kode yang akan dijalankan jika ekspresi sama dengan nilai2
+        break;
+    case nilai3:
+        // Blok kode yang akan dijalankan jika ekspresi sama dengan nilai3
+        break;
+    default:
+        // Blok kode yang akan dijalankan jika ekspresi tidak sama dengan nilai1, nilai2, dan nilai3
+}
+```
+
+Contoh Penerapan:
+
+```cpp filename="case-hari.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+int main() {
+    int day;
+
+    cout << "Masukkan nomor hari (1-7): ";
+    cin >> day;
+
+    switch (day) {
+        case 1:
+            cout << "Hari Senin" << endl;
+            break;
+        case 2:
+            cout << "Hari Selasa" << endl;
+            break;
+        case 3:
+            cout << "Hari Rabu" << endl;
+            break;
+        case 4:
+            cout << "Hari Kamis" << endl;
+            break;
+        case 5:
+            cout << "Hari Jumat" << endl;
+            break;
+        case 6:
+            cout << "Hari Sabtu" << endl;
+            break;
+        case 7:
+            cout << "Hari Minggu" << endl;
+            break;
+        default:
+            cout << "Nomor hari tidak valid" << endl;
+            break;
+    }
+
+    return 0;
+}
+```
+
+Output dari program di atas:
+
+```ansi filename="terminal"
+Masukkan nomor hari (1-7): 2
+Hari Selasa
+```
+
+Pada contoh di atas, kita menggunakan cin untuk meminta pengguna memasukkan nomor hari. Selanjutnya, menggunakan switch-case untuk memeriksa nilai dari day dan mencetak nama hari yang sesuai ke layar. Jika nilai day tidak cocok dengan salah satu kasus yang ditentukan, maka akan dijalankan blok kode dalam default.
+
+## Looping Statements
+
+Looping statement merupakan cara yang digunakan untuk melakukan pengulangan atau iterasi sejumlah kali tertentu atau selama kondisi tertentu terpenuhi. Dalam bahasa C++, terdapat tiga jenis looping statement yang umum digunakan, yaitu `while`, `do-while`, dan `for`.
+
+### While
+
+While loop digunakan untuk melakukan pengulangan selama kondisi yang ditentukan terpenuhi. Selama kondisi masih bernilai benar (true), blok kode dalam while loop akan terus dieksekusi.
+
+Bentuk Umum:
+
+```cpp filename="while.cpp" copy showLineNumbers
+while (kondisi) {
+    // Blok kode yang akan dijalankan selama kondisi bernilai true
+}
+```
+
+Contoh Penerapan:
+
+```cpp filename="while.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i = 1;
+
+    while (i <= 5) {
+        cout << i << " ";
+        i++;
+    }
+
+    return 0;
+}
+```
+
+Output dari program di atas:
+
+```ansi filename="terminal"
+1 2 3 4 5   <- nilai i yang dicetak ke layar sesuai kondisi nilai i
+```
+
+Pada contoh di atas, kita menggunakan while loop dengan kondisi `i <= 5`. Di dalam blok loop, kita mencetak nilai i ke layar dan mengincrement nilainya dengan `i++` setiap iterasi.
+
+note: `i++` adalah singkatan dari `i = i + 1`
+
+### Do-While
+
+Do-while loop juga digunakan untuk melakukan pengulangan seperti while loop. Perbedaannya adalah do-while loop akan menjalankan blok kode 1 kali terlebih dahulu tanpa memperdulikan kondisi dibawahnya, kemudian memeriksa kondisi. Jika kondisi masih bernilai benar (true), maka loop akan terus berlanjut.
+
+Bentuk Umum:
+
+```cpp filename="do-while.cpp" copy showLineNumbers
+do {
+    // Blok kode yang akan dijalankan selama kondisi bernilai true
+} while (kondisi);
+```
+
+Contoh Penerapan:
+
+```cpp filename="do-while.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+
+    do {
+        cout << "Masukkan sebuah angka (0 untuk berhenti): ";
+        cin >> num;
+        cout << "Anda memasukkan angka: " << num << endl;
+    } while (num != 0);
+
+    return 0;
+}
+```
+
+Output dari program di atas:
+
+```ansi filename="terminal"
+Masukkan sebuah angka (0 untuk berhenti): 1
+Anda memasukkan angka: 1
+Masukkan sebuah angka (0 untuk berhenti): 2
+Anda memasukkan angka: 2
+Masukkan sebuah angka (0 untuk berhenti): 0
+Anda memasukkan angka: 0                        <- program akan berhenti setelah memasukkan angka 0
+```
+
+Pada contoh di atas, do-while loop akan menjalankan blok kode di dalamnya terlebih dahulu, kemudian memeriksa apakah num tidak sama dengan 0. Jika tidak sama dengan 0, maka pengguna akan diminta memasukkan angka lagi. Jika sama dengan 0, maka loop akan berhenti.
+
+### For
+
+For loop digunakan untuk melakukan pengulangan dengan pengaturan awal, kondisi, dan pembaruan yang terpisah. Ini memberikan fleksibilitas dalam melakukan pengulangan dengan jumlah iterasi yang telah ditentukan.
+
+Bentuk Umum:
+
+```cpp filename="for.cpp" copy showLineNumbers
+for (pengaturan_awal; kondisi; pembaruan) {
+    // Blok kode yang akan dijalankan selama kondisi bernilai true
+}
+```
+
+Contoh Penerapan:
+
+```cpp filename="for.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        cout << i << " ";
+    }
+
+    return 0;
+}
+```
+
+Output dari program di atas:
+
+```ansi filename="terminal"
+1 2 3 4 5   <- nilai i yang dicetak ke layar sesuai kondisi nilai i
+```
+
+Pada contoh di atas, kita menggunakan for loop dengan pengaturan awal `int i = 1`, kondisi `i <= 5`, dan pembaruan `i++`. Di dalam blok loop, kita mencetak nilai i ke layar.
+
+### Which one to use?
+
+Ketiga tipe perulangan (while, do-while, dan for) memiliki kegunaan yang berbeda dan tidak ada yang secara mutlak lebih baik dari yang lain. Pemilihan tipe perulangan tergantung pada kebutuhan spesifik dalam program yang sedang dikembangkan.
+
+    * `while loop` digunakan ketika kita ingin melakukan pengulangan berdasarkan kondisi tertentu. Loop akan terus berjalan selama kondisi terpenuhi. Kelebihan while loop adalah fleksibilitasnya dalam menentukan kondisi dan pengulangan yang dapat berlangsung dengan durasi yang tidak terbatas.
+
+    <br/>
+
+    * `do-while` loop digunakan ketika kita ingin menjalankan blok kode terlebih dahulu, lalu memeriksa kondisi untuk menentukan apakah pengulangan akan berlanjut atau berhenti. Kelebihan do-while loop adalah setidaknya akan menjalankan blok kode satu kali, bahkan jika kondisi awalnya tidak terpenuhi.
+
+    <br/>
+
+    * `for loop` digunakan ketika kita ingin melakukan pengulangan dengan jumlah iterasi yang telah ditentukan dan menggunakan variabel kontrol yang terintegrasi dalam struktur loop itu sendiri. Kelebihan for loop adalah kemampuannya untuk secara jelas menunjukkan bagian inisialisasi, kondisi, dan pembaruan dalam satu baris, sehingga lebih mudah dipahami dan digunakan dalam pengulangan yang terstruktur.
+
+Dalam memilih tipe perulangan yang sesuai, penting untuk mempertimbangkan kebutuhan dan tujuan program. Jika jumlah iterasi sudah diketahui sebelumnya atau perlu pengulangan yang fleksibel berdasarkan kondisi, for atau while loop dapat digunakan. Sementara itu, jika minimal satu iterasi harus dilakukan sebelum pengecekan kondisi, do-while loop lebih sesuai.
+
+### Nested Loop
+
+Nested loop adalah penggunaan loop di dalam loop. Dengan nested loop, kita dapat melakukan pengulangan dalam struktur yang lebih kompleks, di mana satu loop berada di dalam loop lainnya. Ini memungkinkan kita untuk mengulangi suatu blok kode secara berulang dengan pola yang lebih rumit.
+
+Contoh Penerapan:
+
+Kita menggunakan nested loop untuk mencetak pola segitiga terbalik.
+
+```cpp filename="nested-loop.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+int main() {
+    int baris;
+
+    cout << "Masukkan jumlah baris: ";
+    cin >> baris;
+
+    for (int i = 1; i <= baris; i++) {
+        for (int j = baris; j >= i; j--) {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+```
+
+Output dari program di atas:
+
+```ansi filename="terminal"
+Masukkan jumlah baris: 5
+* * * * *
+* * * *
+* * *
+* *
+*
+```
+
+Pada contoh di atas, kita menggunakan nested loop. Loop pertama `(for (int i = 1; i <= rows; i++))` digunakan untuk mengatur jumlah baris dalam pola. Loop kedua `(for (int j = rows; j >= i; j--))` digunakan untuk mencetak bintang dalam setiap baris dengan mengurangi jumlah bintang yang dicetak setiap kali. Dengan menggunakan nested loop, kita dapat mencetak pola segitiga terbalik sesuai dengan jumlah baris yang dimasukkan oleh pengguna.
+
+## Array
+
+Array adalah struktur data yang digunakan untuk menyimpan kumpulan nilai dengan tipe data yang sama. Array memungkinkan kita menyimpan beberapa nilai dalam satu variabel dengan indeks numerik. Indeks ini digunakan untuk mengakses dan memanipulasi nilai-nilai dalam array.
+
+Ilustrasi Array
+
+<br />
+
+import Image from 'next/image';
+
+<Image src="/images/array.png" alt="array" width={927} height={242} priority />
+
+### Deklarasi Array
+
+Untuk membuat array, kita perlu mendeklarasikan tipe data yang akan disimpan dalam array, nama array, dan jumlah elemen yang akan disimpan dalam array. Jumlah elemen dalam array harus ditentukan saat deklarasi dan tidak dapat diubah setelahnya.
+
+Bentuk Umum:
+
+```cpp filename="array.cpp" copy showLineNumbers
+tipe_data nama_array[jumlah_elemen];
+```
+
+Contoh Penerapan:
+
+```cpp filename="array.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+int main(){
+    int angka[5]={1,2,3,4,5};
+    string nama[3]={"Andi","Budi","Caca"};
+    float desimal[2]={1.5,2.5};
+    char huruf[5]={'a','b','c','d','e'};
+    bool benar[2]={true,false};
+
+    return 0;
+}
+```
+
+### Pengisian Array
+
+- Pengisian langsung
+
+  langsung dengan tanda kurung kurawal (`{isi array yang dipisahkan dengan koma}`) ->
+  `int angka[5]={1,2,3,4,5}; {:cpp}`
+
+  <br />
+
+- Pengisian manual
+
+  Pengisian manual dilakukan dengan mendeklarasikan nilai pada setiap indeksnya.
+
+  ```cpp filename="array.cpp" copy showLineNumbers
+  #include <iostream>
+  using namespace std;
+
+  int main(){
+      int angka[5];
+
+      angka[0]=1;
+      angka[1]=2;
+      angka[2]=3;
+      angka[3]=4;
+      angka[4]=5;
+
+      return 0;
+  }
+  ```
+
+  <br />
+
+- Pengisian dengan perulangan
+
+  ```cpp filename="array.cpp" copy showLineNumbers
+  #include <iostream>
+  using namespace std;
+
+  int main(){
+      int angka[5];
+
+      for(int i=0;i<5;i++){
+          cout<<"Masukkan angka ke-"<<i+1<<": ";
+          cin>>angka[i];
+      }
+
+      return 0;
+  }
+  ```
+
+## Matriks
+
+Matriks adalah struktur data dua dimensi yang digunakan untuk menyimpan sekumpulan nilai dalam baris dan kolom. Matriks sering digunakan untuk merepresentasikan data yang memiliki hubungan yang teratur, seperti data tabel atau citra piksel. Kita dapat mengakses elemen-elemen matriks menggunakan indeks baris dan kolom.
+
+Ilustrasi Matriks
+
+<br />
+
+<Image
+  src="/images/matriks_array.png"
+  alt="matriks"
+  width={1007}
+  height={391}
+  priority
+/>
+
+### Deklarasi Matriks
+
+Untuk membuat matriks, kita perlu mendeklarasikan tipe data yang akan disimpan dalam matriks, nama matriks, jumlah baris, dan jumlah kolom. Jumlah baris dan kolom dalam matriks harus ditentukan saat deklarasi dan tidak dapat diubah setelahnya.
+
+Bentuk Umum:
+
+```cpp filename="matriks.cpp" copy showLineNumbers
+tipe_data nama_matriks[jumlah_baris][jumlah_kolom];
+```
+
+Contoh Penerapan:
+
+```cpp filename="matriks.cpp" copy showLineNumbers
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int BARIS = 3; // Jumlah baris
+    const int KOLOM = 3; // Jumlah kolom
+
+    int matrix[BARIS][KOLOM]; // Deklarasi matriks
+
+    // Memasukkan nilai ke dalam matriks
+    cout << "Masukkan nilai matriks 3x3:" << endl;
+    for (int i = 0; i < BARIS; i++) {
+        for (int j = 0; j < KOLOM; j++) {
+            cout << "Baris " << i + 1 << ", Kolom " << j + 1 << ": ";
+            cin >> matrix[i][j];
+        }
+    }
+
+    cout<<endl;
+
+    // Mencetak nilai dari matriks
+    cout << "Hasil matriks:" << endl;
+    for (int i = 0; i < BARIS; i++) {
+        for (int j = 0; j < KOLOM; j++) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+```
+
+Output dari program di atas:
+
+```ansi filename="terminal"
+Masukkan nilai matriks 3x3:
+Baris 1, Kolom 1: 1
+Baris 1, Kolom 2: 2
+Baris 1, Kolom 3: 3
+Baris 2, Kolom 1: 4
+Baris 2, Kolom 2: 5
+Baris 2, Kolom 3: 6
+Baris 3, Kolom 1: 7
+Baris 3, Kolom 2: 8
+Baris 3, Kolom 3: 9
+
+Hasil matriks:
+1 2 3
+4 5 6
+7 8 9
+```
+
+Pada contoh di atas, kita mendeklarasikan matriks matrix dengan ukuran 3x3 menggunakan array multidimensi. Kita menggunakan konsep **nested loop** untuk memasukkan nilai ke dalam matriks dan mencetak nilai-nilai matriks ke layar.
